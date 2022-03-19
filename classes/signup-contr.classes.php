@@ -6,7 +6,8 @@ class SignupContr extends Signup
     private $pwd;
     private $pwdrepeat;
     private $email;
-
+    public $errors = [];
+   
     public function __construct($uid, $pwd, $pwdrepeat, $email)
     {
         $this->uid = $uid;
@@ -18,32 +19,28 @@ class SignupContr extends Signup
 
     public function signupUser () {
         if (!$this->emptyInput()) {
-            //empty input handle
-            header("location: ../index.php");
-            die();
+            $this->errors["input"] = "no input";
+            
         }
-        if (!$this->invalididUid()) {
-            //invalid uid handle
-            header("location: ../index.php");
-            die();
+        elseif (!$this->invalididUid()) {
+            $this->errors["uid"] = "invalid uid";
+            
         }
-        if (!$this->invalidEmail()) {
-            //invalid email handle
-            header("location: ../index.php");
-            die();
+        elseif (!$this->invalidEmail()) {
+            $this->errors["email"] = "invalid email";
+            
         }
-        if (!$this->pwdMatch()) {
-            //pwd does not match handle
-            header("location: ../index.php");
-            die();
+        elseif (!$this->pwdMatch()) {
+            $this->errors["pwd"] = "pwd has to match";
+            
         }
-        if (!$this->uidTakenCheck()) {
-            // name is taken handle
-            header("location: ../index.php");
-            die();
+        elseif (!$this->uidTakenCheck()) {
+            $this->errors["uidtaken"] = "already taken";
+            
         }
-
-        $this->setUser($this->uid, $this->pwd, $this->email);
+        else {
+            $this->setUser($this->uid, $this->pwd, $this->email);
+        }
     }
 
 

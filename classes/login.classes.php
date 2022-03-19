@@ -8,13 +8,13 @@ class Login extends Dbh {
         
         if (!$statement->execute(array($uid))) {
             $statement = null;
-            header("location: ../index.php");
+            header("location: http://localhost/Investing%20app/index.php?");
             die();
         }
 
         if ($statement->rowCount() == 0) {
             $statement = null;
-            header("location: ../index.php");
+            header("location: http://localhost/Investing%20app/index.php?");
             // echo "no user found";
             die();
         }
@@ -25,7 +25,7 @@ class Login extends Dbh {
 
         if (!$checkPwd) {
             $statement = null;
-            header("location: ../index.php");
+            header("location: http://localhost/Investing%20app/index.php?");
             // echo 'wrong password';
             die();
         }

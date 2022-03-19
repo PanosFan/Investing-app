@@ -8,7 +8,7 @@ class Signup extends Dbh {
 
         if (!$statement->execute(array($uid, $hashedpwd, $email))) {
             $statement = null;
-            header("location: ../index.php");
+            header("location: http://localhost/Investing%20app/index.php?");
             die();
         }
         session_start();
@@ -21,7 +21,7 @@ class Signup extends Dbh {
 
         if (!$statement->execute(array($uid, $email))) {
             $statement = null;
-            header("location: ../index.php");
+            header("location: http://localhost/Investing%20app/index.php?");
             die();
         }
 
