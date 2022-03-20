@@ -15,10 +15,10 @@
             <div class="container between center">
                 <h1 class="logo"><a href="#"><span>Php</span> project</a></h1>
                 <div class="menu">
-                    <a href=<?php echo $menu0 ?> class="active-link">Home</a>
-                    <a href=<?php echo $menu1 ?>>Stocks</a>
-                    <a href="#">Menu3</a>
-                    <a href="#">Menu4</a>
+                    <a class="<?php if(isset($activelink0)) echo "active-link"; ?>" href=<?php echo $menu0 ?> >Home</a>
+                    <a class="<?php if(isset($activelink1)) echo "active-link"; ?>" href=<?php echo $menu1 ?>>Stocks</a>
+                    <a class="<?php if(isset($activelink2)) echo "active-link"; ?>" href="#">Menu3</a>
+                    <a class="<?php if(isset($activelink3)) echo "active-link"; ?>" href="#">Menu4</a>
                 </div>
 
                 <?php 

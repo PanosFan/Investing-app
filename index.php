@@ -24,6 +24,7 @@ if (isset($_POST["signup"])) {
 ?>
 
 <?php
+$activelink0 = true;
 $logoutbtn = "./includes/logout.inc.php";
 $menu0 = "#";
 $menu1 = "./includes/stocks.inc.php";
