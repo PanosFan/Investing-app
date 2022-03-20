@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,30 +16,28 @@
             <div class="container between center">
                 <h1 class="logo"><a href="#"><span>Php</span> project</a></h1>
                 <div class="menu">
-                    <a class="<?php if(isset($activelink0)) echo "active-link"; ?>" href=<?php echo $menu0 ?> >Home</a>
-                    <a class="<?php if(isset($activelink1)) echo "active-link"; ?>" href=<?php echo $menu1 ?>>Stocks</a>
-                    <a class="<?php if(isset($activelink2)) echo "active-link"; ?>" href="#">Menu3</a>
-                    <a class="<?php if(isset($activelink3)) echo "active-link"; ?>" href="#">Menu4</a>
+                    <a class="<?php if (isset($activelink0)) echo "active-link"; ?>" href=<?php echo $menu0 ?>>Home</a>
+                    <a class="<?php if (isset($activelink1)) echo "active-link"; ?>"
+                        href=<?php echo $menu1 ?>>Stocks</a>
+                    <a class="<?php if (isset($activelink2)) echo "active-link"; ?>" href="#">Menu3</a>
+                    <a class="<?php if (isset($activelink3)) echo "active-link"; ?>" href="#">Menu4</a>
                 </div>
 
-                <?php 
-                    if (isset($_SESSION["username"]))
-                    {
+                <?php
+                if (isset($_SESSION["username"])) {
                 ?>
                 <div class="login-buttons">
                     <button><a href=<?php echo $logoutbtn ?>>Logout</a></button>
                 </div>
                 <?php
-                    }
-                    else
-                    {
+                } else {
                 ?>
                 <div class="login-buttons none">
                     <button>Login</button>
                     <button>Sign up</button>
                 </div>
-                <?php 
-                    }
+                <?php
+                }
                 ?>
 
                 <button class="hamburger">

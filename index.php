@@ -17,9 +17,9 @@ if (isset($_POST["signup"])) {
     $uid = $_POST["uid"];
     $pwd = $_POST["pwd"];
     $pwdrepeat = $_POST["pwdrepeat"];
-    $email = $_POST["email"];   
+    $email = $_POST["email"];
     $signup = new SignupContr($uid, $pwd, $pwdrepeat, $email);
-    $signup->signupUser();    
+    $signup->signupUser();
 }
 ?>
 
@@ -54,15 +54,15 @@ include_once './includes/components/navbar.inc.php'; ?>
             <button class="next-quote">Next quote</button>
         </div>
     </section>
-    <?php 
-        // signup error handlers
-        if (isset($signup->errors["input"])) echo $signup->errors["input"];
-        if (isset($signup->errors["uidtaken"])) echo $signup->errors["uidtaken"];
-        if (isset($signup->errors["pwd"])) echo $signup->errors["pwd"];
-        if (isset($signup->errors["email"])) echo $signup->errors["email"];
-        if (isset($signup->errors["uid"])) echo $signup->errors["uid"];
-        // login error handlers
-        if (isset($login->errors)) echo $login->errors;
+    <?php
+    // signup error handlers
+    if (isset($signup->errors["input"])) echo $signup->errors["input"];
+    if (isset($signup->errors["uidtaken"])) echo $signup->errors["uidtaken"];
+    if (isset($signup->errors["pwd"])) echo $signup->errors["pwd"];
+    if (isset($signup->errors["email"])) echo $signup->errors["email"];
+    if (isset($signup->errors["uid"])) echo $signup->errors["uid"];
+    // login error handlers
+    if (isset($login->errors)) echo $login->errors;
     ?>
 </main>
 

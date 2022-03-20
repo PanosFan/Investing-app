@@ -1,8 +1,10 @@
 <?php
 
-class Dbh {
+class Dbh
+{
 
-    protected function connect () {
+    protected function connect()
+    {
         $username = "root";
         $password = "";
         $host = "localhost";

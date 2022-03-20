@@ -16,7 +16,7 @@ $(document).ready(() => {
     "Don't look for the needle in the haystack. Just buy the haystack!",
     "I don't look to jump over seven-foot bars; I look around for one-foot bars that I can step over.",
     "The stock market is filled with individuals who know the price of everything, but the value of nothing.",
-    "In investing, what is comfortable is rarely profitable."
+    "In investing, what is comfortable is rarely profitable.",
   ];
   author = [
     "Benjamin Franklin",
@@ -28,7 +28,7 @@ $(document).ready(() => {
     "John Bogle",
     "Warren Buffett",
     "Phillip Fisher",
-    "Robert Arnott"
+    "Robert Arnott",
   ];
 
   function getQuote(q, a) {
@@ -42,8 +42,6 @@ $(document).ready(() => {
 
   //next quote button
   $(".next-quote").click(() => {
-    getQuote(quotes, author);    
+    getQuote(quotes, author);
   });
-
-  
 });

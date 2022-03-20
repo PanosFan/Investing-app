@@ -7,7 +7,7 @@ class SignupContr extends Signup
     private $pwdrepeat;
     private $email;
     public $errors = [];
-   
+
     public function __construct($uid, $pwd, $pwdrepeat, $email)
     {
         $this->uid = $uid;
@@ -17,28 +17,19 @@ class SignupContr extends Signup
     }
 
 
-    public function signupUser () {
+    public function signupUser()
+    {
         if (!$this->emptyInput()) {
             $this->errors["input"] = "no input";
-            
-        }
-        elseif (!$this->invalididUid()) {
+        } elseif (!$this->invalididUid()) {
             $this->errors["uid"] = "invalid uid";
-            
-        }
-        elseif (!$this->invalidEmail()) {
+        } elseif (!$this->invalidEmail()) {
             $this->errors["email"] = "invalid email";
-            
-        }
-        elseif (!$this->pwdMatch()) {
+        } elseif (!$this->pwdMatch()) {
             $this->errors["pwd"] = "pwd has to match";
-            
-        }
-        elseif (!$this->uidTakenCheck()) {
+        } elseif (!$this->uidTakenCheck()) {
             $this->errors["uidtaken"] = "already taken";
-            
-        }
-        else {
+        } else {
             $this->setUser($this->uid, $this->pwd, $this->email);
         }
     }
@@ -84,8 +75,7 @@ class SignupContr extends Signup
     {
         if (!$this->checkUser($this->uid, $this->email)) {
             return false;
-        }
-        else {
+        } else {
             return true;
         }
     }
