@@ -32,7 +32,7 @@ class Login extends Dbh {
 
       
         
-        session_start();
+        
         $_SESSION["username"] = $data[0]["users_uid"];
         $statement = null;
     }

@@ -11,7 +11,7 @@ class Signup extends Dbh {
             header("location: http://localhost/Investing%20app/index.php?");
             die();
         }
-        session_start();
+        
         $_SESSION["username"] = $uid;
         $statement = null;
     }
