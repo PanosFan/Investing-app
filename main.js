@@ -3,6 +3,7 @@ $(document).ready(() => {
   $(".hamburger").click(() => {
     $(".hamburger").toggleClass("is-active");
     $(".mobile-nav").toggleClass("is-active");
+    $("body").toggleClass("overflow");
   });
 
   //quotes

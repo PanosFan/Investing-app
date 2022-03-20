@@ -53,5 +53,11 @@
             <a href="#">Stocks</a>
             <a href="#">Menu3</a>
             <a href="#">Menu4</a>
+            <a href="#">Menu5</a>
+            <a href="#">Menu6</a>
+            <a href="#">Menu7</a>
+            <a href="#">Menu8</a>
+            <a href="#">Menu9</a>
+            <a href="#">Menu10</a>
         </nav>
     </header>
