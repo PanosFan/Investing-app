@@ -14,28 +14,21 @@ class Login extends Dbh
             die();
         }
 
-        if ($statement->rowCount() == 0) {
+        if ($statement->rowCount() > 0) {
+
+            $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $checkPwd = password_verify($pwd, $data[0]["users_pwd"]);
+
+            if (!$checkPwd) {
+                $statement = null;
+                return false; //return false to trigger the error when getUser is called
+            } else {
+                $_SESSION["username"] = $data[0]["users_uid"];
+                $statement = null;
+            }
+        } else {
             $statement = null;
-            header("location: http://localhost/Investing%20app/index.php?");
-            // echo "no user found";
-            die();
+            return false; //return false to trigger the error when getUser is called
         }
-
-        $data = $statement->fetchAll(PDO::FETCH_ASSOC);
-        $checkPwd = password_verify($pwd, $data[0]["users_pwd"]);
-
-
-        if (!$checkPwd) {
-            $statement = null;
-            header("location: http://localhost/Investing%20app/index.php?");
-            // echo 'wrong password';
-            die();
-        }
-
-
-
-
-        $_SESSION["username"] = $data[0]["users_uid"];
-        $statement = null;
     }
 }

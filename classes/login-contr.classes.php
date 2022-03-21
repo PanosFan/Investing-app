@@ -19,6 +19,7 @@ class LoginContr extends Login
             $this->errors = "empty input";
         } else {
             $this->getUser($this->uid, $this->pwd);
+            if (!$this->getUser($this->uid, $this->pwd)) $this->errors = "user or password is wrong";
         }
     }
 
