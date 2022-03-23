@@ -20,15 +20,15 @@ class SignupContr extends Signup
     public function signupUser()
     {
         if (!$this->emptyInput()) {
-            $this->errors["input"] = "no input";
+            $this->errors["input"] = "Empty input";
         } elseif (!$this->invalididUid()) {
-            $this->errors["uid"] = "invalid uid";
+            $this->errors["uid"] = "Invalid uid";
         } elseif (!$this->invalidEmail()) {
-            $this->errors["email"] = "invalid email";
+            $this->errors["email"] = "Invalid email";
         } elseif (!$this->pwdMatch()) {
-            $this->errors["pwd"] = "pwd has to match";
+            $this->errors["pwd"] = "Passwords have to match";
         } elseif (!$this->uidTakenCheck()) {
-            $this->errors["uidtaken"] = "already taken";
+            $this->errors["uidtaken"] = "Username already taken";
         } else {
             $this->setUser($this->uid, $this->pwd, $this->email);
         }
