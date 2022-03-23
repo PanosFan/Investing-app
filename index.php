@@ -32,6 +32,7 @@ include_once './includes/components/navbar.inc.php'; ?>
 
 <main>
     <section class="container start">
+        <?php if (!isset($_SESSION["username"])) { ?>
         <div class="forms between">
             <form action="" method="post">
                 <h2>Sign up</h2>
@@ -48,6 +49,7 @@ include_once './includes/components/navbar.inc.php'; ?>
                 <button type="submit" name="login">Login</button>
             </form>
         </div>
+        <?php } ?>
         <div class="quotes">
             <p class="quote"></p>
             <p class="author"></p>

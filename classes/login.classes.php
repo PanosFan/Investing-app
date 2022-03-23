@@ -25,6 +25,7 @@ class Login extends Dbh
             } else {
                 $_SESSION["username"] = $data[0]["users_uid"];
                 $statement = null;
+                return true;
             }
         } else {
             $statement = null;
