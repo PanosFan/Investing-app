@@ -32,12 +32,6 @@ $(document).ready(() => {
     "Robert Arnott",
   ];
 
-  function getQuote(q, a) {
-    randomNum = Math.floor(Math.random() * quotes.length);
-    $(".quote").text(q[randomNum]);
-    $(".author").text("-" + a[randomNum]);
-  }
-
   //initial load
   getQuote(quotes, author);
 
@@ -45,4 +39,10 @@ $(document).ready(() => {
   $(".next-quote").click(() => {
     getQuote(quotes, author);
   });
+
+  function getQuote(q, a) {
+    randomNum = Math.floor(Math.random() * quotes.length);
+    $(".quote").text(q[randomNum]);
+    $(".author").text("-" + a[randomNum]);
+  }
 });
