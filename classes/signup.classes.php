@@ -8,7 +8,7 @@ class Signup extends Dbh
         $statement = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email) VALUES (?,?,?);');
         $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-        if (!$statement->execute(array($uid, $hashedpwd, $email))) {
+        if (!$statement->execute([$uid, $hashedpwd, $email])) {
             $statement = null;
             header("location: http://localhost/Investing%20app/index.php?");
             die();

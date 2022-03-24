@@ -8,7 +8,7 @@ class Login extends Dbh
     {
         $statement = $this->connect()->prepare('SELECT users_uid, users_pwd FROM users WHERE users_uid =?;');
 
-        if (!$statement->execute(array($uid))) {
+        if (!$statement->execute([$uid])) {
             $statement = null;
             header("location: http://localhost/Investing%20app/index.php?");
             die();
