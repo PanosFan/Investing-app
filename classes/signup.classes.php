@@ -15,7 +15,7 @@ class Signup extends Dbh
         }
 
         $_SESSION["username"] = $uid;
-        $statement = null;
+        $statement->closeCursor();
     }
 
     protected function checkUser($uid, $email)

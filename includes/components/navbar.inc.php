@@ -23,8 +23,6 @@
                     <a class="<?php if (isset($activelink0)) echo "active-link"; ?>" href=<?php echo $menu0 ?>>Home</a>
                     <a class="<?php if (isset($activelink1)) echo "active-link"; ?>"
                         href=<?php echo $menu1 ?>>Stocks</a>
-                    <a class="<?php if (isset($activelink2)) echo "active-link"; ?>" href="#">Menu3</a>
-                    <a class="<?php if (isset($activelink3)) echo "active-link"; ?>" href="#">Menu4</a>
                     <a class="logout-btn" href=<?php echo $logoutbtn ?>>Logout</a>
                     <?php
                     }
@@ -50,8 +48,6 @@
             ?>
             <a class="<?php if (isset($activelink0)) echo "active-link"; ?>" href=<?php echo $menu0 ?>>Home</a>
             <a class="<?php if (isset($activelink1)) echo "active-link"; ?>" href=<?php echo $menu1 ?>>Stocks</a>
-            <a class="<?php if (isset($activelink2)) echo "active-link"; ?>" href="#">Menu3</a>
-            <a class="<?php if (isset($activelink3)) echo "active-link"; ?>" href="#">Menu4</a>
             <a class="logout-btn" href=<?php echo $logoutbtn ?>>Logout</a>
             <?php
             }

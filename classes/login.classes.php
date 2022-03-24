@@ -20,11 +20,11 @@ class Login extends Dbh
             $checkPwd = password_verify($pwd, $data[0]["users_pwd"]);
 
             if (!$checkPwd) {
-                $statement = null;
+                $statement->closeCursor();
                 return false; //return false to trigger the error when getUser is called
             } else {
                 $_SESSION["username"] = $data[0]["users_uid"];
-                $statement = null;
+                $statement->closeCursor();
                 return true;
             }
         } else {

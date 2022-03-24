@@ -1,11 +1,13 @@
 <?php
-session_start();
+include_once './includes/components/session.inc.php';
 if (isset($_POST["login"])) {
     include_once 'classes/dbh.classes.php';
     include_once 'classes/login.classes.php';
     include_once 'classes/login-contr.classes.php';
-    $uid = $_POST["uid"];
-    $pwd = $_POST["pwd"];
+    // $uid = $_POST["uid"];
+    $uid = filter_input(INPUT_POST, "uid", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    // $pwd = $_POST["pwd"];
+    $pwd = filter_input(INPUT_POST, "pwd", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $login = new LoginContr($uid, $pwd);
     $login->loginUser();
 }
@@ -14,10 +16,14 @@ if (isset($_POST["signup"])) {
     include_once 'classes/dbh.classes.php';
     include_once 'classes/signup.classes.php';
     include_once 'classes/signup-contr.classes.php';
-    $uid = $_POST["uid"];
-    $pwd = $_POST["pwd"];
-    $pwdrepeat = $_POST["pwdrepeat"];
-    $email = $_POST["email"];
+    // $uid = $_POST["uid"];
+    $uid = filter_input(INPUT_POST, "uid", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    // $pwd = $_POST["pwd"];
+    $pwd = filter_input(INPUT_POST, "pwd", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    // $pwdrepeat = $_POST["pwdrepeat"];
+    $pwdrepeat = filter_input(INPUT_POST, "pwdrepeat", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    // $email = $_POST["email"];
+    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
     $signup = new SignupContr($uid, $pwd, $pwdrepeat, $email);
     $signup->signupUser();
 }

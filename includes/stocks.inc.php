@@ -1,9 +1,13 @@
 <?php
-session_start();
+include_once './components/session.inc.php';
+if (!isset($_SESSION["username"])) {
+    header("location: http://localhost/Investing%20app/index.php?");
+    die();
+}
 $activelink1 = true;
 $logoutbtn = './logout.inc.php';
 $menu0 = '../index.php';
-$menu1 = './stocks.inc.php';
+$menu1 = '#';
 include_once '../includes/components/navbar.inc.php';
 ?>
 
