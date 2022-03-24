@@ -38,7 +38,7 @@ include_once './includes/components/navbar.inc.php';
 <main>
     <section class="container start my1">
         <?php if (!isset($_SESSION["username"])) { ?>
-        <div class="forms between">
+        <div class="forms start">
             <form action="" method="post">
                 <h2>Sign up</h2>
                 <input type="text" name="uid" placeholder="Username">
