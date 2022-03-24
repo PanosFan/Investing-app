@@ -8,7 +8,7 @@ $activelink1 = true;
 $logoutbtn = './logout.inc.php';
 $menu0 = '../index.php';
 $menu1 = '#';
-include_once '../includes/components/navbar.inc.php';
+include_once './components/navbar.inc.php';
 ?>
 
 <main class="container start my1">
@@ -63,4 +63,4 @@ include_once '../includes/components/navbar.inc.php';
         </p>
     </section>
 </main>
-<?php include_once '../includes/components/footer-scripts.inc.php'; ?>
+<?php include_once './components/footer-scripts.inc.php'; ?>

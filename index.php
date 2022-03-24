@@ -1,9 +1,9 @@
 <?php
 include_once './includes/components/session.inc.php';
 if (isset($_POST["login"])) {
-    include_once 'classes/dbh.classes.php';
-    include_once 'classes/login.classes.php';
-    include_once 'classes/login-contr.classes.php';
+    include_once './classes/dbh.classes.php';
+    include_once './classes/login.classes.php';
+    include_once './classes/login-contr.classes.php';
     // $uid = $_POST["uid"];
     $uid = filter_input(INPUT_POST, "uid", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     // $pwd = $_POST["pwd"];
@@ -13,9 +13,9 @@ if (isset($_POST["login"])) {
 }
 
 if (isset($_POST["signup"])) {
-    include_once 'classes/dbh.classes.php';
-    include_once 'classes/signup.classes.php';
-    include_once 'classes/signup-contr.classes.php';
+    include_once './classes/dbh.classes.php';
+    include_once './classes/signup.classes.php';
+    include_once './classes/signup-contr.classes.php';
     // $uid = $_POST["uid"];
     $uid = filter_input(INPUT_POST, "uid", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     // $pwd = $_POST["pwd"];
