@@ -21,17 +21,16 @@ if (isset($_POST["signup"])) {
     $signup = new SignupContr($uid, $pwd, $pwdrepeat, $email);
     $signup->signupUser();
 }
-?>
-
-<?php
 $activelink0 = true;
 $logoutbtn = "./includes/logout.inc.php";
 $menu0 = "#";
 $menu1 = "./includes/stocks.inc.php";
-include_once './includes/components/navbar.inc.php'; ?>
+include_once './includes/components/navbar.inc.php';
+?>
+
 
 <main>
-    <section class="container start">
+    <section class="container start my1">
         <?php if (!isset($_SESSION["username"])) { ?>
         <div class="forms between">
             <form action="" method="post">
@@ -52,7 +51,6 @@ include_once './includes/components/navbar.inc.php'; ?>
             </form>
         </div>
         <?php } else { ?>
-
         <div class="quotes">
             <p class="quote"></p>
             <p class="author"></p>
@@ -69,10 +67,7 @@ include_once './includes/components/navbar.inc.php'; ?>
     if (isset($signup->errors["pwd"])) echo $signup->errors["pwd"];
     if (isset($signup->errors["email"])) echo $signup->errors["email"];
     if (isset($signup->errors["uid"])) echo "<label class=\"warning\">$signup->errors[\"uid\"] </label>";
-
-
     ?>
 
 </main>
-
 <?php include_once './includes/components/footer-scripts.inc.php'; ?>
