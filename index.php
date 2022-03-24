@@ -46,6 +46,14 @@ include_once './includes/components/navbar.inc.php';
                 <input type="password" name="pwdrepeat" placeholder="Repeat Password">
                 <input type="email" name="email" placeholder="E-mail">
                 <button type="submit" name="signup">Sign up</button>
+                <?php
+                    // signup error handlers
+                    if (isset($signup->errors['input'])) echo "<label class=\"warning\">{$signup->errors['input']}</label>";
+                    if (isset($signup->errors['uidtaken'])) echo "<label class=\"warning\">{$signup->errors['uidtaken']}</label>";
+                    if (isset($signup->errors['pwd'])) echo "<label class=\"warning\">{$signup->errors['pwd']}</label>";
+                    if (isset($signup->errors['email'])) echo "<label class=\"warning\">{$signup->errors['email']}</label>";
+                    if (isset($signup->errors['uid'])) echo "<label class=\"warning\">{$signup->errors['uid']}</label>";
+                    ?>
             </form>
             <form action="" method="post">
                 <h2>Login</h2>
@@ -53,7 +61,7 @@ include_once './includes/components/navbar.inc.php';
                 <input type="password" name="pwd" placeholder="Password">
                 <button type="submit" name="login">Login</button>
                 <!-- login error handlers -->
-                <?php if (isset($login->errors)) echo "<label class=\"warning\">$login->errors</label>"; ?>
+                <?php if (isset($login->errors)) echo "<label class=\"warning\">{$login->errors}</label>"; ?>
             </form>
         </div>
         <?php } else { ?>
@@ -66,14 +74,6 @@ include_once './includes/components/navbar.inc.php';
 
     </section>
 
-    <?php
-    // signup error handlers
-    if (isset($signup->errors["input"])) echo $signup->errors["input"];
-    if (isset($signup->errors["uidtaken"])) echo $signup->errors["uidtaken"];
-    if (isset($signup->errors["pwd"])) echo $signup->errors["pwd"];
-    if (isset($signup->errors["email"])) echo $signup->errors["email"];
-    if (isset($signup->errors["uid"])) echo "<label class=\"warning\">$signup->errors[\"uid\"] </label>";
-    ?>
 
 </main>
 <?php include_once './includes/components/footer-scripts.inc.php'; ?>
