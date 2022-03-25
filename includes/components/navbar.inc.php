@@ -14,15 +14,14 @@
     <header>
         <nav>
             <div class="container between center">
-                <h1 class="logo"><a href="#"><span>Php</span> project</a></h1>
+                <h1 class="logo"><a href=<?php echo $menu0 ?>><span>Php</span> project</a></h1>
                 <div class="menu">
 
                     <?php
                     if (isset($_SESSION["username"])) {
                     ?>
-                    <a class="<?php if (isset($activelink0)) echo "active-link"; ?>" href=<?php echo $menu0 ?>>Home</a>
-                    <a class="<?php if (isset($activelink1)) echo "active-link"; ?>"
-                        href=<?php echo $menu1 ?>>Stocks</a>
+                    <a class="<?php if ($activelink0) echo "active-link"; ?>" href=<?php echo $menu0 ?>>Home</a>
+                    <a class="<?php if ($activelink1) echo "active-link"; ?>" href=<?php echo $menu1 ?>>Stocks</a>
                     <a class="logout-btn" href=<?php echo $logoutbtn ?>>Logout</a>
                     <?php
                     }

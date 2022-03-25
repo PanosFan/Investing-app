@@ -61,7 +61,7 @@ include_once './includes/components/navbar.inc.php';
                 <input type="password" name="pwd" placeholder="Password">
                 <button type="submit" name="login">Login</button>
                 <!-- login error handlers -->
-                <?php if (isset($login->errors)) echo "<label class=\"warning\">{$login->errors}</label>"; ?>
+                <?php if (isset($login->errors)) echo "<label class=\"warning\">$login->errors</label>"; ?>
             </form>
         </div>
         <?php } else { ?>
