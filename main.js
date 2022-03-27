@@ -45,4 +45,15 @@ $(document).ready(() => {
     $(".quote").text(q[randomNum]);
     $(".author").text("-" + a[randomNum]);
   }
+
+  async function fetchData() {
+    const res = await fetch(
+      "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+    );
+    const data = await res.json();
+    console.log(data);
+    console.log(data["Meta Data"]["1. Information"]);
+    console.log(data["Time Series (Daily)"]["2021-12-31"]["5. volume"]);
+  }
+  fetchData();
 });
