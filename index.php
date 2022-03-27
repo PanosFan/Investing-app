@@ -40,15 +40,15 @@ include_once './includes/components/navbar.inc.php';
 <main>
     <section class="container start my1">
         <?php if (!isset($_SESSION["username"])) { ?>
-            <div class="forms start">
-                <form action="" method="post">
-                    <h2>Sign up</h2>
-                    <input type="text" name="uid" placeholder="Username">
-                    <input type="password" name="pwd" placeholder="Password">
-                    <input type="password" name="pwdrepeat" placeholder="Repeat Password">
-                    <input type="email" name="email" placeholder="E-mail">
-                    <button type="submit" name="signup">Sign up</button>
-                    <?php
+        <div class="forms start">
+            <form action="" method="post">
+                <h2>Sign up</h2>
+                <input type="text" name="uid" placeholder="Username">
+                <input type="password" name="pwd" placeholder="Password">
+                <input type="password" name="pwdrepeat" placeholder="Repeat Password">
+                <input type="email" name="email" placeholder="E-mail">
+                <button type="submit" name="signup">Sign up</button>
+                <?php
                     // signup error handlers
                     if (isset($signup->errors['input'])) echo "<label class=\"warning\">{$signup->errors['input']}</label>";
                     if (isset($signup->errors['uidtaken'])) echo "<label class=\"warning\">{$signup->errors['uidtaken']}</label>";
@@ -56,22 +56,22 @@ include_once './includes/components/navbar.inc.php';
                     if (isset($signup->errors['email'])) echo "<label class=\"warning\">{$signup->errors['email']}</label>";
                     if (isset($signup->errors['uid'])) echo "<label class=\"warning\">{$signup->errors['uid']}</label>";
                     ?>
-                </form>
-                <form action="" method="post">
-                    <h2>Login</h2>
-                    <input type="text" name="uid" placeholder="Username">
-                    <input type="password" name="pwd" placeholder="Password">
-                    <button type="submit" name="login">Login</button>
-                    <!-- login error handlers -->
-                    <?php if (isset($login->errors)) echo "<label class=\"warning\">$login->errors</label>"; ?>
-                </form>
-            </div>
+            </form>
+            <form action="" method="post">
+                <h2>Login</h2>
+                <input type="text" name="uid" placeholder="Username">
+                <input type="password" name="pwd" placeholder="Password">
+                <button type="submit" name="login">Login</button>
+                <!-- login error handlers -->
+                <?php if (isset($login->errors)) echo "<label class=\"warning\">$login->errors</label>"; ?>
+            </form>
+        </div>
         <?php } else { ?>
-            <div class="quotes">
-                <p class="quote"></p>
-                <p class="author"></p>
-                <button class="next-quote">Next quote</button>
-            </div>
+        <div class="quotes">
+            <p class="quote"></p>
+            <p class="author"></p>
+            <button class="next-quote">Next quote</button>
+        </div>
         <?php } ?>
 
     </section>
