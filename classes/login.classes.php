@@ -9,7 +9,7 @@ class Login extends Dbh
 
         if (!$statement->execute([$uid])) {
             $statement = null;
-            header("location: http://localhost/Investing%20app/index.php?");
+            header("location: http://localhost/Investing-app/index.php");
             die();
         }
 
