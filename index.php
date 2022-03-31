@@ -77,7 +77,7 @@ include_once './includes/components/navbar.inc.php';
                 <label for="input1">Ask for a price</label>
                 <input type="text" name="input1" id="input1">
                 <button type="button" id="input1BTN">Submit</button>
-                <ul>
+                <ul class="my1">
                     <li id="symbol">Symbol: </li>
                     <li id="open">Open price: </li>
                     <li id="close">Close price: </li>

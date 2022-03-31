@@ -49,7 +49,7 @@ $(document).ready(() => {
   const buttonEL = document.getElementById("input1BTN");
   buttonEL.addEventListener("click", () => {
     const inputEL = document.getElementById("input1").value;
-    getPrices(inputEL);
+    if (!inputEL.length == 0) getPrices(inputEL);
   });
 
   async function getPrices(symbol) {
