@@ -46,14 +46,30 @@ $(document).ready(() => {
     $(".author").text("-" + a[randomNum]);
   }
 
-  async function fetchData() {
+  const buttonEL = document.getElementById("input1BTN");
+  buttonEL.addEventListener("click", () => {
+    const inputEL = document.getElementById("input1").value;
+    getPrices(inputEL);
+  });
+
+  async function getPrices(symbol) {
+    let day = new Date();
+    let dd = String(day.getDate() - 1).padStart(2, "0"); //api shows up to one day before
+    let mm = String(day.getMonth() + 1).padStart(2, "0"); //January is 0!
+    let yyyy = day.getFullYear();
+    day = yyyy + "-" + mm + "-" + dd;
+
     const res = await fetch(
-      "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+      `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=HZ6DKMY2DQ2T15YX`
     );
     const data = await res.json();
-    console.log(data);
-    console.log(data["Meta Data"]["1. Information"]);
-    console.log(data["Time Series (Daily)"]["2021-12-31"]["5. volume"]);
+    document.getElementById("symbol").textContent =
+      "Symbol: " + data["Meta Data"]["2. Symbol"];
+    document.getElementById("open").textContent =
+      "Open prince: " + data["Time Series (Daily)"][day]["1. open"];
+    document.getElementById("close").textContent =
+      "Close price: " + data["Time Series (Daily)"][day]["4. close"];
+    document.getElementById("volume").textContent =
+      "Volume: " + data["Time Series (Daily)"][day]["5. volume"];
   }
-  fetchData();
 });

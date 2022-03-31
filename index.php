@@ -67,10 +67,23 @@ include_once './includes/components/navbar.inc.php';
             </form>
         </div>
         <?php } else { ?>
-        <div class="quotes">
-            <p class="quote"></p>
-            <p class="author"></p>
-            <button class="next-quote">Next quote</button>
+        <div>
+            <div class="quotes">
+                <p class="quote"></p>
+                <p class="author"></p>
+                <button class="next-quote">Next quote</button>
+            </div>
+            <div class="prices my1">
+                <label for="input1">Ask for a price</label>
+                <input type="text" name="input1" id="input1">
+                <button type="button" id="input1BTN">Submit</button>
+                <ul>
+                    <li id="symbol">Symbol: </li>
+                    <li id="open">Open price: </li>
+                    <li id="close">Close price: </li>
+                    <li id="volume">Volume: </li>
+                </ul>
+            </div>
         </div>
         <?php } ?>
 
