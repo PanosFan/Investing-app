@@ -46,18 +46,21 @@ $(document).ready(() => {
     $(".author").text("-" + a[randomNum]);
   }
 
+  //prices API
   const buttonEL = document.getElementById("input1BTN");
   buttonEL.addEventListener("click", () => {
     const inputEL = document.getElementById("input1").value;
-    if (!inputEL.length == 0) getPrices(inputEL);
+    if (inputEL.length > 0) getPrices(inputEL);
   });
 
   async function getPrices(symbol) {
     let day = new Date();
     let dd = String(day.getDate() - 1).padStart(2, "0"); //api shows up to one day before
+    if (dd == "00") dd = "01";
     let mm = String(day.getMonth() + 1).padStart(2, "0"); //January is 0!
     let yyyy = day.getFullYear();
     day = yyyy + "-" + mm + "-" + dd;
+    console.log(day);
 
     const res = await fetch(
       `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=HZ6DKMY2DQ2T15YX`

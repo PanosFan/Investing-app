@@ -2,7 +2,7 @@
 
 include_once './components/session.inc.php';
 if (!isset($_SESSION["username"])) {
-    header("location: http://localhost/Investing%20app/index.php?");
+    header("location: http://localhost/Investing-app/index.php");
     die();
 }
 
